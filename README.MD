@@ -24,11 +24,125 @@ Este proyecto es una API para gestionar el registro de vehículos en un parquead
 ## Instalación
 ### 1. Clona el repositorio:
 
+<pre> git clone https://github.com/tu-usuario/parqueadero-api.git </pre>
 
 ### 2. Navega al directorio del proyecto:
 
+<pre> cd parqueadero-api </pre>
+
 ### 3. Instala las dependencias
+
+<pre> npm install </pre>
 
 ### 4. Crea un archivo .env en la raíz del proyecto y agrega tu URI de MongoDB Atlas:
 
+<pre> MONGO_URI=mongodb+srv://<usuario>:<contraseña>@cluster0.mongodb.net/<nombre_base_de_datos>?retryWrites=true&w=majority </pre>
+
 ### 5. Inicia el servidor:
+
+<pre> npm start </pre>
+
+## Endpoints
+### 1. GET /api/vehicles
+Obtiene todos los vehículos registrados.
+<pre>
+Respuesta:
+
+json
+Copiar código
+[
+  {
+    "licensePlate": "ABC123",
+    "type": "car",
+    "entryTime": "2024-12-06T10:00:00Z",
+    "exitTime": null
+  },
+  {
+    "licensePlate": "XYZ456",
+    "type": "motorcycle",
+    "entryTime": "2024-12-06T11:00:00Z",
+    "exitTime": null
+  }
+]
+
+</pre>
+
+
+### 2. POST /api/vehicles
+Registra un nuevo vehículo.
+<pre>
+
+Parámetros (body):
+
+json
+Copiar código
+{
+  "licensePlate": "ABC123",
+  "type": "car"
+}
+Respuesta:
+
+json
+Copiar código
+{
+  "licensePlate": "ABC123",
+  "type": "car",
+  "entryTime": "2024-12-06T12:00:00Z",
+  "exitTime": null
+}
+</pre>
+
+
+### 3. PUT /api/vehicles/:licensePlate/exit
+Registra la salida de un vehículo.
+<pre>
+
+Parámetros (url):
+
+licensePlate: La matrícula del vehículo.
+Respuesta:
+
+json
+Copiar código
+{
+  "licensePlate": "ABC123",
+  "type": "car",
+  "entryTime": "2024-12-06T10:00:00Z",
+  "exitTime": "2024-12-06T14:00:00Z"
+}
+</pre>
+
+
+### 4. DELETE /api/vehicles/:licensePlate
+Elimina un vehículo del registro.
+<pre>
+
+Parámetros (url):
+
+licensePlate: La matrícula del vehículo.
+Respuesta:
+
+json
+Copiar código
+{
+  "message": "Vehicle deleted successfully."
+}
+</pre>
+
+### Estructura del proyecto
+<pre>
+/parqueadero-api
+│
+├── src/
+│   ├── config/                # Configuración de la base de datos
+│   ├── controllers/           # Lógica de los controladores
+│   ├── middleWare/            # Middlewares
+│   ├── models/                # Modelos de Mongoose
+│   ├── routes/                # Rutas de la API
+│   └── app.js                 # Configuración de Express
+│
+├── .env                       # Variables de entorno
+├── server.js                  # Archivo de inicio del servidor
+├── package.json               # Dependencias y scripts
+└── README.md                  # Documentación del proyecto
+</pre>
