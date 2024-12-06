@@ -36,8 +36,7 @@ Este proyecto es una API para gestionar el registro de vehículos en un parquead
 
 ### 4. Crea un archivo .env en la raíz del proyecto y agrega tu URI de MongoDB Atlas:
 
-<pre> MONGO_URI=mongodb+srv://<usuario>:<contraseña>@cluster0.mongodb.net/<nombre_base_de_datos>?retryWrites=true&w=majority
- </pre>
+<pre> MONGO_URI=mongodb+srv://<usuario>:<contraseña>@cluster0.mongodb.net/<nombre_base_de_datos>?retryWrites=true&w=majority </pre>
 
 ### 5. Inicia el servidor:
 
@@ -128,4 +127,22 @@ Copiar código
 {
   "message": "Vehicle deleted successfully."
 }
+</pre>
+
+### Estructura del proyecto
+<pre>
+/parqueadero-api
+│
+├── src/
+│   ├── config/                # Configuración de la base de datos
+│   ├── controllers/           # Lógica de los controladores
+│   ├── middleWare/            # Middlewares
+│   ├── models/                # Modelos de Mongoose
+│   ├── routes/                # Rutas de la API
+│   └── app.js                 # Configuración de Express
+│
+├── .env                       # Variables de entorno
+├── server.js                  # Archivo de inicio del servidor
+├── package.json               # Dependencias y scripts
+└── README.md                  # Documentación del proyecto
 </pre>
