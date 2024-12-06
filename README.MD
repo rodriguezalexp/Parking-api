@@ -24,13 +24,105 @@ Este proyecto es una API para gestionar el registro de vehículos en un parquead
 ## Instalación
 ### 1. Clona el repositorio:
 
-<pre>bash
-git clone https://github.com/tu-usuario/parqueadero-api.git </pre>
+<pre> git clone https://github.com/tu-usuario/parqueadero-api.git </pre>
 
 ### 2. Navega al directorio del proyecto:
 
+<pre> cd parqueadero-api </pre>
+
 ### 3. Instala las dependencias
+
+<pre> npm install </pre>
 
 ### 4. Crea un archivo .env en la raíz del proyecto y agrega tu URI de MongoDB Atlas:
 
+<pre> MONGO_URI=mongodb+srv://<usuario>:<contraseña>@cluster0.mongodb.net/<nombre_base_de_datos>?retryWrites=true&w=majority
+ </pre>
+
 ### 5. Inicia el servidor:
+
+<pre> npm start </pre>
+
+## Endpoints
+### 1. GET /api/vehicles
+Obtiene todos los vehículos registrados.
+<pre>
+Respuesta:
+
+json
+Copiar código
+[
+  {
+    "licensePlate": "ABC123",
+    "type": "car",
+    "entryTime": "2024-12-06T10:00:00Z",
+    "exitTime": null
+  },
+  {
+    "licensePlate": "XYZ456",
+    "type": "motorcycle",
+    "entryTime": "2024-12-06T11:00:00Z",
+    "exitTime": null
+  }
+]
+
+</pre>
+
+<pre>
+2. POST /api/vehicles
+Registra un nuevo vehículo.
+
+Parámetros (body):
+
+json
+Copiar código
+{
+  "licensePlate": "ABC123",
+  "type": "car"
+}
+Respuesta:
+
+json
+Copiar código
+{
+  "licensePlate": "ABC123",
+  "type": "car",
+  "entryTime": "2024-12-06T12:00:00Z",
+  "exitTime": null
+}
+</pre>
+
+<pre>
+3. PUT /api/vehicles/:licensePlate/exit
+Registra la salida de un vehículo.
+
+Parámetros (url):
+
+licensePlate: La matrícula del vehículo.
+Respuesta:
+
+json
+Copiar código
+{
+  "licensePlate": "ABC123",
+  "type": "car",
+  "entryTime": "2024-12-06T10:00:00Z",
+  "exitTime": "2024-12-06T14:00:00Z"
+}
+</pre>
+
+<pre>
+4. DELETE /api/vehicles/:licensePlate
+Elimina un vehículo del registro.
+
+Parámetros (url):
+
+licensePlate: La matrícula del vehículo.
+Respuesta:
+
+json
+Copiar código
+{
+  "message": "Vehicle deleted successfully."
+}
+</pre>
