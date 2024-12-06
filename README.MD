@@ -68,9 +68,10 @@ Copiar código
 
 </pre>
 
-<pre>
-2. POST /api/vehicles
+
+### 2. POST /api/vehicles
 Registra un nuevo vehículo.
+<pre>
 
 Parámetros (body):
 
@@ -92,9 +93,10 @@ Copiar código
 }
 </pre>
 
-<pre>
-3. PUT /api/vehicles/:licensePlate/exit
+
+### 3. PUT /api/vehicles/:licensePlate/exit
 Registra la salida de un vehículo.
+<pre>
 
 Parámetros (url):
 
@@ -111,9 +113,10 @@ Copiar código
 }
 </pre>
 
-<pre>
-4. DELETE /api/vehicles/:licensePlate
+
+### 4. DELETE /api/vehicles/:licensePlate
 Elimina un vehículo del registro.
+<pre>
 
 Parámetros (url):
 
