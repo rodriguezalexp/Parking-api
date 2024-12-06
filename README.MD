@@ -24,7 +24,7 @@ Este proyecto es una API para gestionar el registro de vehículos en un parquead
 ## Instalación
 ### 1. Clona el repositorio:
 ```bash
-git clone https://github.com/tu-usuario/parqueadero-api.git
+git clone https://github.com/tu-usuario/parqueadero-api.git```
 
 ### 2. Navega al directorio del proyecto:
 
