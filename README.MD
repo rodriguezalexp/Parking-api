@@ -47,9 +47,6 @@ Este proyecto es una API para gestionar el registro de vehículos en un parquead
 Obtiene todos los vehículos registrados.
 <pre>
 Respuesta:
-
-json
-Copiar código
 [
   {
     "licensePlate": "ABC123",
@@ -74,16 +71,12 @@ Registra un nuevo vehículo.
 
 Parámetros (body):
 
-json
-Copiar código
 {
   "licensePlate": "ABC123",
   "type": "car"
 }
 Respuesta:
 
-json
-Copiar código
 {
   "licensePlate": "ABC123",
   "type": "car",
@@ -102,8 +95,6 @@ Parámetros (url):
 licensePlate: La matrícula del vehículo.
 Respuesta:
 
-json
-Copiar código
 {
   "licensePlate": "ABC123",
   "type": "car",
@@ -122,8 +113,6 @@ Parámetros (url):
 licensePlate: La matrícula del vehículo.
 Respuesta:
 
-json
-Copiar código
 {
   "message": "Vehicle deleted successfully."
 }
